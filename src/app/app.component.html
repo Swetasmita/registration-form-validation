@@ -1,0 +1,72 @@
+<div class="container">  
+<h2 class="bg-primary">Angular 12 Reactive Form Validation Example</h2>
+<br><br>
+<form class="content" [formGroup]="registerForm" (ngSubmit)="submit()">
+  <h3 class="text-center">Register Form</h3>
+  <!--First Name -->
+  <div class="form-group">
+    <div class="col-sm-12">
+    <label class="col-form-label" for="firstname">First Name</label>
+  <input formControlName="firstName" type="text" class="form-control">
+ <!--FirstName - Error Message -->
+ <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="alert">
+  <span class="error" *ngIf="firstname.errors?.required">FirstName is required.</span>
+  <span class="error" *ngIf="firstname.errors?.pattern">FirstName must be characters</span>
+  <span class="error" *ngIf="firstname.errors?.minlength">FirstName should be 3 characters.</span>
+</div>
+</div>
+</div>
+  <!--Last Name -->
+  <div class="form-group">
+    <div class="col-sm-12">
+    <label class="col-form-label" for="lastname">Last Name</label>
+  <input formControlName="lastName" type="text" class="form-control">
+ <!-- Error Message -->
+ <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="alert">
+  <span class="error" *ngIf="lastname.errors?.required">LastName is required.</span>
+  <span class="error" *ngIf="lastname.errors?.pattern">LastName must be characters</span>
+</div>
+</div>
+</div>
+ <!--Email ID -->
+ <div class="form-group">
+  <div class="col-sm-12">
+  <label class="col-form-label" for="emailid">Email Id</label>
+<input formControlName="emailId" type="text" class="form-control">
+
+<!-- Error Message -->
+<div *ngIf="emailid.invalid && (emailid.dirty || emailid.touched)" class="alert">
+<span class="error" *ngIf="emailid.errors?.required">Email Id is required.</span>
+<span class="error" *ngIf="emailid.errors?.email">Enter valid Email address</span>
+</div>
+</div>
+</div>
+
+ <!--Mobile Number -->
+ <div class="form-group">
+  <div class="col-sm-12">
+  <label class="col-form-label" for="mobile">Mobile Number</label>
+<input formControlName="mobileNumber" type="text" class="form-control">
+
+<!-- Error Message -->
+<div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" class="alert">
+<span class="error" *ngIf="mobile.errors?.required">Mobile Number is required.</span>
+<span class="error" *ngIf="mobile.errors?.pattern">Please Enter digits</span>
+</div>
+</div>
+</div>
+  <!--Last Name -->
+  <div class="form-group">
+    <div class="col-sm-12">
+    <label class="col-form-label" for="pswd">Password</label>
+  <input formControlName="password" type="password" class="form-control">
+ <!-- Error Message -->
+ <div *ngIf="pswd.invalid && (pswd.dirty || pswd.touched)" class="alert">
+  <span class="error" *ngIf="pswd.errors?.required">Password is required.</span>
+  <span class="error" *ngIf="pswd.errors?.minlength">Password must be 6 characters</span>
+</div>
+</div>
+</div><br>
+<button class="btn btn-primary" type="submit">Submit</button>
+</form>
+</div>

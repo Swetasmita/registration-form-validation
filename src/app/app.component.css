@@ -1,0 +1,18 @@
+.content{
+    max-width: 500px;
+    margin: auto;
+    background-color: #E6E6FA;
+    padding: 2% 2%;
+    }
+    button
+    {
+        background-color: rgb(9, 168, 231);
+        color: #fff;
+    }
+    button:hover
+    {
+        color:#fff;
+    }
+    .error{
+        color: red;
+    }
